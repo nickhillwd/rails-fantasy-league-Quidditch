@@ -12,5 +12,10 @@
   <%= f.text_field :snitch_catch_count %>
   <br>
   <br>
+  <%= f.label :team_id, "Team" %>
+  <% options = options_from_collection_for_select(@teams, 'id', 'name') %>
+  <%= f.select :team_id, options %>
+  <br>
+  <br>
   <%= f.submit 'Update Player!' %>
 <% end %>

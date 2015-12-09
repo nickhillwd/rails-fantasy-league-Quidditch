@@ -10,6 +10,9 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    if @player.team_id != nil
+      @team = Team.find(@player.team_id)
+    end
   end
 
   def destroy
@@ -20,6 +23,7 @@ class PlayersController < ApplicationController
 
   def edit
     @player = Player.find(params[:id])
+    @teams = Team.all
   end
 
   def update
@@ -36,7 +40,7 @@ class PlayersController < ApplicationController
   private
 
     def player_params
-      params.require(:player).permit(:player_name, :position, :player_number, :snitch_catch_count)
+      params.require(:player).permit(:player_name, :position, :player_number, :snitch_catch_count, :team_id)
     end
 
 end
