@@ -1,0 +1,10 @@
+<% @teams.each do |team| %>
+  <%= team.name %> was founded in <%= team.founded %>
+  <br>
+  <%= link_to("Show #{team.name}", team_path(team)) %>
+  <br>
+  <%= button_to('Delete Team', team_path(team), method: :delete, data: {confirm: 'Delete team? Are you sure?!'} ) %>
+  <%= link_to('Edit Team', edit_team_path(team)) %>
+  <br>
+  <br>
+<% end %>
