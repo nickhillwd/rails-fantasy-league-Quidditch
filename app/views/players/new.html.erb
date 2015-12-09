@@ -10,6 +10,10 @@
   <br>
   <%= f.label :snitch_catch_count %>
   <%= f.text_field :snitch_catch_count %>
+ <br>
+ <br>
+ <%= f.label :team_id, "Team" %>
+ <%= f.collection_select(:team_id, @teams, :id, :name, prompt: "Who do they play for?") %>
   <br>
   <br>
   <%= f.submit 'Create Player!' %>

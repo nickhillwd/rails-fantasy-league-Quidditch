@@ -13,9 +13,7 @@
   <br>
   <br>
   <%= f.label :team_id, "Team" %>
-  <%# options = options_from_collection_for_select(@teams, 'id', 'name') %>
   <%= f.collection_select(:team_id, @teams, :id, :name, prompt: "Who do they play for?") %>
-  <%#= f.select :team_id, options %>
   <br>
   <br>
   <%= f.submit 'Update Player!' %>
