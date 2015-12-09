@@ -1,0 +1,16 @@
+<%= form_for @player do |f| %>
+  <%= f.label :player_name %>
+  <%= f.text_field :player_name %>
+  <br>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <br>
+  <%= f.label :player_number %>
+  <%= f.text_field :player_number %>
+  <br>
+  <%= f.label :snitch_catch_count %>
+  <%= f.text_field :snitch_catch_count %>
+  <br>
+  <br>
+  <%= f.submit 'Update Player!' %>
+<% end %>
