@@ -1,0 +1,10 @@
+<% @players.each do |player| %>
+  <h2><%= player.player_name %></h2>
+  <br>
+  <%= link_to("Show #{player.player_name}", player_path(player)) %>
+  <br>
+  <%= button_to('Delete Player', player_path(player), method: :delete, data: {confirm: 'Delete player? Are you sure?!'} ) %>
+  <%= link_to('Edit Player', edit_player_path(player)) %>
+  <br>
+  <br>
+<% end %>
